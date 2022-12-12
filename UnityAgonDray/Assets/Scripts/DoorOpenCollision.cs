@@ -14,10 +14,14 @@ public class DoorOpenCollision : MonoBehaviour
     public string animtionParamater;
     Animator anim;
     public string KeyType;
+//    AudioSource audioSrc;
+//    AudioClip audioClp;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
+ //       audioSrc = GetComponent<AudioSource>();
+ //       audioClp = audioSrc.clip;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -31,16 +35,18 @@ public class DoorOpenCollision : MonoBehaviour
             {
                 Debug.Log("Door Open");
                 anim.SetBool(animtionParamater, true);
+ //               audioSrc.PlayOneShot(audioClp);
             }
         }
 
-        if (KeyType == "Yellow")
+        if (KeyType == "Black")
         {
-            Debug.Log("Has Yellow Key = " + manager.hasYellowKey);
-            if (other.tag == "Player" && manager.hasYellowKey)
+            Debug.Log("Has Black Key = " + manager.hasBlackKey);
+            if (other.tag == "Player" && manager.hasBlackKey)
             {
                 Debug.Log("Door Open");
                 anim.SetBool(animtionParamater, true);
+ //               audioSrc.PlayOneShot(audioClp);
             }
         }
 
@@ -51,6 +57,7 @@ public class DoorOpenCollision : MonoBehaviour
             {
                 Debug.Log("Door Open");
                 anim.SetBool(animtionParamater, true);
+ //               audioSrc.PlayOneShot(audioClp);
             }
         }
 
